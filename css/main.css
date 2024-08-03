@@ -1,0 +1,221 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif; /* Puedes cambiar 'Open Sans' por otra fuente que prefieras */
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Merriweather', serif; /* Puedes cambiar 'Merriweather' por otra fuente que prefieras */
+	color: #444;
+	margin-bottom: 1rem;
+  }
+
+canvas {
+  display: block;
+  position: absolute;
+}
+
+#main {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 100%;
+}
+
+#area {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	flex: 1;
+	display: flex;
+	justify-content: space-around;
+	overflow: auto;
+}
+
+#tools {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	overflow: auto;
+	width: 580px;
+	height: 100%;
+	transition: width .8s;
+}
+@media only screen and (max-width: 1700px) {
+	#tools {
+		width: 440px;
+	}
+}
+
+@media only screen and (max-width: 1540px) {
+	#tools {
+		width: 300px;
+	}
+}
+@media only screen and (max-width: 1380px) {
+	#tools {
+		width: 160px;
+	}
+}
+
+#tools > div {
+	background-image: url('../textures/01_130x66_130x230.png?v1.0');
+	background-repeat: no-repeat;
+	background-size: auto;
+	width: 130px;
+	height: 230px;
+	border: 2px dashed transparent;
+	box-sizing: border-box;
+}
+
+#tools > div.selected {
+	border-color: #b05355;
+}
+
+#ui{
+	width: 100%;
+    height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.tool {
+	display: flex;
+	justify-content: center; /* Alinea horizontalmente */
+	align-items: center; /* Alinea verticalmente */
+	height: 100vh; /* Ejemplo de altura, puede ajustarse */
+	background-color: #f8f9fa; /* Color de fondo para ver mejor el efecto */
+}
+
+.tile-text{
+	font-weight: bold;
+	background-color: rgba(0,0,0,0.4);
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+
+}
+
+.titles{
+	font-family: 'Merriweather', serif;
+    color: #444;
+    margin-bottom: 1rem;
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+
+/* Estilos para la tabla */
+table {
+	width: 100%;
+	max-width: 600px;
+	border-collapse: collapse;
+	background-color: #ffffff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	overflow: hidden;
+  }
+  
+  /* Estilos para las celdas */
+  th, td {
+	padding: 12px 15px;
+	text-align: left;
+  }
+  
+  /* Estilos para el encabezado */
+  th {
+	background-color: #007bff;
+	color: #ffffff;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+  }
+  
+  /* Estilos para las filas */
+  tr:nth-child(even) {
+	background-color: #f2f2f2;
+  }
+  
+  /* Estilos para la fila del total */
+  tr:last-child {
+	background-color: #e9ecef;
+	font-weight: bold;
+  }
+  
+  td {
+	border-bottom: 1px solid #dddddd;
+  }
+  
+  td[colspan="2"] {
+	text-align: right;
+  }
+  
+  td:last-child {
+	text-align: right;
+  }
+  
+  th:last-child {
+	text-align: right;
+  }
+  
+  /* Estilos de hover */
+  tr:hover {
+	background-color: #f1f1f1;
+  }
+  
+  /* Estilos de borde para la tabla */
+  table, th, td {
+	border: none;
+  }
+
+  .share-button {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #25D366;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 966px) {
+
+	#main {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	#tools {
+		display: flex;
+		align-items: center;
+		overflow: auto;
+		width: 100%;
+		height: 240px;
+	}
+	#area {
+		justify-content: flex-start;
+	}
+
+	#ui{
+		height: 25%;
+	}
+	.titles{
+		font-size: 20px;
+		padding-bottom: 10px;
+	}
+	
+}
+
